@@ -213,7 +213,7 @@ def contact():
             connection.starttls()
             connection.login(user=email_address, password=app_password)
             connection.sendmail(from_addr=email_address,
-                                to_addrs='vohieu225@gmail.com',
+                                to_addrs=email_address,
                                 msg=f"Subject:New Message\n\n{message}")
         return render_template("contact.html", msg_sent=True)
     return render_template("contact.html", msg_sent=False)
